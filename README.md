@@ -37,7 +37,13 @@ Replace your API domain with the domain of the proxy deployed on your server. Fo
 - Cerebras:
   - from `https://api.cerebras.ai`
   - to `https://your-proxy/cerebras`
- 
+- DeepSeek:
+  - from `https://api.deepseek.com`
+  - to `https://your-proxy/deepseek`
+- SiliconFlow:
+  - from `https://api.siliconflow.cn`
+  - to `https://your-proxy/siliconflow`
+
 ## Hosted by ChatWise
 
 Use the hosted API, for example OpenAI `https://ai-proxy.chatwise.app/openai/v1`
