@@ -43,6 +43,9 @@ Replace your API domain with the domain of the proxy deployed on your server. Fo
 - SiliconFlow:
   - from `https://api.siliconflow.cn`
   - to `https://your-proxy/siliconflow`
+- Azure AI:
+  - from `https://YOUR_RESOURCE_NAME.services.ai.azure.com`
+  - to `https://your-proxy/azure`
 
 ## Hosted by ChatWise
 

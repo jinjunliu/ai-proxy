@@ -104,6 +104,10 @@ const proxies: { pathSegment: string; target: string; orHostname?: string }[] =
       pathSegment: "siliconflow",
       target: "https://api.siliconflow.cn",
     },
+    {
+      pathSegment: "azure",
+      target: "https://YOUR_RESOURCE_NAME.services.ai.azure.com",
+    },
   ]
 
 app.post(
