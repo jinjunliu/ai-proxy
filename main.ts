@@ -96,6 +96,10 @@ const proxies: { pathSegment: string; target: string; orHostname?: string }[] =
       pathSegment: "googleapis-cloudcode-pa",
       target: "https://cloudcode-pa.googleapis.com",
     },
+    {
+      pathSegment: "deepseek",
+      target: "https://api.deepseek.com",
+    },
   ]
 
 app.post(
