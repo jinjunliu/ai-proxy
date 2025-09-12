@@ -100,6 +100,10 @@ const proxies: { pathSegment: string; target: string; orHostname?: string }[] =
       pathSegment: "deepseek",
       target: "https://api.deepseek.com",
     },
+    {
+      pathSegment: "siliconflow",
+      target: "https://api.siliconflow.cn",
+    },
   ]
 
 app.post(
