@@ -59,16 +59,23 @@ Deploy this as a Docker container, check out [Dockerfile](./Dockerfile).
 
 #### Using Pre-built Images
 
-The application is automatically built and published to Docker Hub for both x64 and ARM64 architectures.
+Images are published to Docker Hub for both `linux/amd64` and `linux/arm64`.
+
+- `:latest` → published on versioned releases (e.g., tags like `v1.2.3`)
+- `:main` → built from the `main` branch (edge builds)
+- Semantic tags → `1.2.3`, `1.2`, `1`
 
 ```bash
-# Pull the image
+# Pull a stable release
+docker pull jinjunliu/ai-proxy:latest
+
+# Or pull the bleeding-edge main build
 docker pull jinjunliu/ai-proxy:main
 
-# Run with Docker
+# Run with Docker (example uses latest)
 docker run -d -p 3000:3000 --name ai-proxy \
   -e YOUR_AZURE_ENDPOINT=https://your-resource-name.services.ai.azure.com \
-  jinjunliu/ai-proxy:main
+  jinjunliu/ai-proxy:latest
 ```
 
 #### Building Locally
@@ -97,7 +104,7 @@ Create a `docker-compose.yml` file:
 version: '3.8'
 services:
   ai-proxy:
-    image: jinjunliu/ai-proxy:main
+    image: jinjunliu/ai-proxy:latest # use :main for edge
     ports:
       - "3000:3000"
     environment:
@@ -110,6 +117,8 @@ Then run:
 ```bash
 docker-compose up -d
 ```
+
+> Note: Images are built with SBOM and provenance metadata enabled for supply‑chain transparency.
 
 #### Environment Variables
 
