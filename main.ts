@@ -16,7 +16,62 @@ app.use(async (c, next) => {
   c.res.headers.set("X-Accel-Buffering", "no")
 })
 
-app.get("/", (c) => c.text("A proxy for AI!"))
+app.get("/", (c) =>
+  c.html(`
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AI Proxy</title>
+        <style>
+          body {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: #fff;
+            font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+          }
+          h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5em;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+          }
+          p {
+            font-size: 1.3rem;
+            margin-bottom: 2em;
+          }
+          .card {
+            background: rgba(0,0,0,0.2);
+            border-radius: 16px;
+            padding: 2em 3em;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+            text-align: center;
+          }
+          a {
+            color: #ffd86b;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+          }
+          a:hover {
+            color: #fff;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="card">
+          <h1>🤖 AI Proxy</h1>
+          <p>Welcome to your gateway for AI APIs.<br>Fast, secure, and easy to use.</p>
+          <a href="https://github.com/jinjunliu/ai-proxy" target="_blank">View on GitHub</a>
+        </div>
+      </body>
+    </html>
+  `)
+)
 
 const fetchWithTimeout = async (
   url: string,
